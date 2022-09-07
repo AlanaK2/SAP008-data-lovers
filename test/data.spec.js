@@ -88,7 +88,7 @@ describe('sortData', () => {
     ];
     expect(sortData(dados)).toStrictEqual(resultado)
   });
-})
+});
 describe('difficultyFilter', () => {
   it('Deveria ser uma função', () => {
     expect(typeof difficultyFilter).toBe('function');
@@ -189,12 +189,30 @@ it('Deveria retornar os campeões com o nível de dificuldade alto', () => {
   ];
   expect(difficultyFilter(dados, "alto")).toStrictEqual(resultado)
 });
-// it('Deveria retornar todos campeões', () => {
-//   const dados = "";
+it('Deveria retornar todos campeões', () => {
+  const dados = [
+    {
+      name: "Aatrox",
+      info: {
+        difficulty: 4 }
+    },
+    {
+      name: "Ahri",
+      info: {
+        difficulty: 5
+      }
+     
+    },
+    {
+      name: "Anivia",
+      info: {
+        difficulty: 10
+      }        
+    }
+    ]
   
-//   const resultado = data ;
-//   expect(difficultyFilter(dados, data)).toStrictEqual(resultado)
-// });
+  expect(difficultyFilter(dados, "")).toStrictEqual(dados)
+});
 describe('computerStats', () => {
   it('Deveria ser uma função', () => {
     expect(typeof computerStats).toBe('function');
