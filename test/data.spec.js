@@ -1,9 +1,8 @@
-import { filtroDoSelect, ordenandoCampeoes} from '../src/data.js';
+import { computerStats, difficultyFilter, filterData, sortData} from '../src/data.js';
 
-
-describe('filtroDoSelect', () => {
+describe('filterData', () => {
   it('Deveria ser uma constante', () => {
-    expect(typeof filtroDoSelect).toBe('function');
+    expect(typeof filterData).toBe('function');
   });
 
 
@@ -34,11 +33,11 @@ describe('filtroDoSelect', () => {
     
     const resultado = [
       {
+        name: "Nami",
         tags: [
           "Support",
           "Mage"
         ],
-        name: "Nami"
       },
       {
         name: "Taric",
@@ -48,13 +47,13 @@ describe('filtroDoSelect', () => {
         ]
       }
     ];
-    expect(filtroDoSelect(dados, "Support")).toStrictEqual(resultado);
+    expect(filterData(dados, "Support")).toStrictEqual(resultado);
   });
 });
 
-describe('ordenandoCampeoes', () => {
+describe('sortData', () => {
   it('Deveria ser uma função', () => {
-    expect(typeof ordenandoCampeoes).toBe('function');
+    expect(typeof sortData).toBe('function');
   });
 
 
@@ -87,6 +86,125 @@ describe('ordenandoCampeoes', () => {
         name: "Blitzcrank"
       }
     ];
-    expect(ordenandoCampeoes(dados)).toStrictEqual(resultado)
+    expect(sortData(dados)).toStrictEqual(resultado)
   });
 })
+describe('difficultyFilter', () => {
+  it('Deveria ser uma função', () => {
+    expect(typeof difficultyFilter).toBe('function');
+  });
+  it('Deveria retornar os campeões com o nível de dificuldade baixo', () => {
+    const dados = [
+      {
+        name: "Aatrox",
+        info: {
+          difficulty: 4 }
+      },
+      {
+        name: "Ahri",
+        info: {
+          difficulty: 5
+        }
+       
+      },
+      {
+        name: "Akali",
+        info: {
+          difficulty: 7
+        }        
+      }
+      ];
+    
+    const resultado = [
+      {
+        name: "Aatrox",
+        info: {
+          difficulty: 4 }
+        }
+    ];
+    expect(difficultyFilter(dados, "baixo")).toStrictEqual(resultado)
+  });
+it('Deveria retornar os campeões com o nível de dificuldade medio', () => {
+  const dados = [
+    {
+      name: "Aatrox",
+      info: {
+        difficulty: 4 }
+    },
+    {
+      name: "Ahri",
+      info: {
+        difficulty: 5
+      }
+     
+    },
+    {
+      name: "Anivia",
+      info: {
+        difficulty: 10
+      }        
+    }
+    ];
+  
+  const resultado = [
+    {
+      name: "Ahri",
+      info: {
+        difficulty: 5
+      }
+     
+    }
+  ];
+  expect(difficultyFilter(dados, "medio")).toStrictEqual(resultado)
+});
+it('Deveria retornar os campeões com o nível de dificuldade alto', () => {
+  const dados = [
+    {
+      name: "Aatrox",
+      info: {
+        difficulty: 4 }
+    },
+    {
+      name: "Ahri",
+      info: {
+        difficulty: 5
+      }
+     
+    },
+    {
+      name: "Anivia",
+      info: {
+        difficulty: 10
+      }        
+    }
+    ];
+  
+  const resultado = [
+    {
+      name: "Anivia",
+      info: {
+        difficulty: 10
+      }        
+    }
+  ];
+  expect(difficultyFilter(dados, "alto")).toStrictEqual(resultado)
+});
+// it('Deveria retornar todos campeões', () => {
+//   const dados = "";
+  
+//   const resultado = data ;
+//   expect(difficultyFilter(dados, data)).toStrictEqual(resultado)
+// });
+describe('computerStats', () => {
+  it('Deveria ser uma função', () => {
+    expect(typeof computerStats).toBe('function');
+  });
+})
+  it('Deveria retornar o percentual correto baseado nos dados de entrada', () => {
+    const tamTotal = 100
+    const tamParcial= 50
+    const resultado= 50
+    expect(computerStats(tamParcial, tamTotal)).toBe(resultado)
+  });
+})
+

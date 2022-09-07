@@ -1,5 +1,5 @@
-export const filterData = (data, requirement, filterType) => {
-  const filtroDaFuncao = (filterType === 'tags') ? data.filter(champion => champion.tags.includes(requirement)) : data.filter(champion => champion.difficulty.includes(requirement));
+export const filterData = (data, requirement) => {
+  const filtroDaFuncao = data.filter(champion => champion.tags.includes(requirement));
   return filtroDaFuncao;
 };
 
@@ -11,31 +11,23 @@ export const sortData = (data) => data.sort((champ1, champ2) => {
   }
 })
 
-export const computerStats = (tags, champArray) => {
-  if (tags === 'Marksman' || tags === 'Assassin' || tags === 'Fighter') {
-    let ataque = champArray.map((champ) => champ.info.attack);
-    let soma = ataque.reduce(function(soma, i){
-      return soma + i;
-    })
-    let media = (soma/champArray.length).toFixed(1);
-    return media;
-  } else if (tags === 'Support' || tags === 'Tank') {
-    let defesa = champArray.map((champ) => champ.info.defense);
-    let soma = defesa.reduce(function(soma, i) {
-      return soma + 1
-    })
-    let media = (soma/champArray.length).toFixed(1);
-    return media;
-  } else {
-    let magia = champArray.map((champ) => champ.info.magic);
-    let soma = magia.reduce(function(soma, i) {
-      return soma + 1
-    })
-    let media = (soma/champArray.length).toFixed(1);
-    return media;
+export const difficultyFilter = (data,difficulty) => {
+  if (difficulty===""){
+    return data;
+  }
+  else if (difficulty=== "baixo"){
+    return data.filter(item => item.info.difficulty<=4);
+  }
+  else if (difficulty==="medio"){
+    return data.filter(item=> item.info.difficulty>=5 && item.info.difficulty<= 7);
+  }
+  else if (difficulty==="alto"){
+    return data.filter(item=> item.info.difficulty>=8);
   }
 }
-//função para pegar o ataque, magia e defesa de todos os campeões conforme sua
-//função no jogo. ex: atirador - ataque, mago - magia, suporte - defesa;
-//pegar o valor de todos os atiradores, somar e dividir pela quantidade 
-//de campeoes atiradores.
+export const computerStats = (tamResult, tamTotal) => {
+   let calculo = ((tamResult / tamTotal) * 100)
+   return Math.round(calculo) 
+  }
+
+

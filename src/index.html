@@ -10,26 +10,25 @@
   <body>
     <div id="root">
       <header class="topo">
+      <div id="logos">
         <img class="logo-riot" src="./img/riotlogo.png" alt="riot logo">
         <img class="logo-lol" src="./img/logolol.png" alt="lol logo">
-        <div id="mobile-navbar" class="mobile-navbar">
-          <div class="hamb1"></div>
-          <div class="hamb2"></div>
-          <div class="hamb3"></div>
-        </div>
+      </div>
         <div id="navbar" class="navbar">
           <button id="btn-sobre" class="btn-sobre">SOBRE</button>
           <a href="https://www.leagueoflegends.com/pt-br/" target="_blank">SITE OFICIAL</a>
         </div>
       </header>
       <section id="main-content">
-        <h1>OLÁ, INVOCADOR. ESCOLHA SEU CAMPEÃO</h1>
+        <h1>SEJAM BEM-VINDES, JOGADORES!<br>
+          ESCOLHA SEU
+          CAMPEÃO</h1>
         <button id="iniciar" class="iniciar">INICIAR</button>
       </section> 
       <section id="modal" class="modal">
         <div class="sobre">
           <h1>SOBRE</h1>
-          <p>O site foi desenvolvido com o objetivo de  ajudar os jogadores ou novos jogadores a conhecerem e escolherem os campeões presentes em Summoner’s Rift.</p>
+          <p>Esse site foi desenvolvido com o objetivo de  ajudar aqueles que ja jogam LoL ou novos jogadores a conhecerem mais sobre os personagem do jogo e escolherem os seus campeões preferidos!</p>
         </div>
         <button id="btn-voltar" class="voltar">VOLTAR</button>
       </section>
@@ -37,6 +36,7 @@
         <div class="titulo-card-page">
           <h1>ESCOLHENDO SEU CAMPEÃO</h1>
         </div>
+        <div id="form">
         <form>
           <label for="funcao">TODAS AS FUNÇÕES</label>
           <select name="tipo-de-campeao" id="funcao">
@@ -50,6 +50,7 @@
           </select>
           <label for="dificuldade">NÍVEL DE DIFICULDADE</label>
           <select name="nivel-de-dificuldade" id="dificuldade">
+            <option value>Dificuldade</option>
             <option value="baixo">BAIXO</option>
             <option value="medio">MÉDIO</option>
             <option value="alto">ALTO</option>
@@ -59,7 +60,8 @@
             <option value="az">A-Z</option>
             <option value="za">Z-A</option>
           </select>
-        </form>
+        </form></div>
+        <div id="frase"><p></p></div>
         <div id="cardzinho"></div>
       </section>
       <footer>
