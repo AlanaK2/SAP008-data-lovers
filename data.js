@@ -1,5 +1,9 @@
 export const filterData = (data, requirement) => {
   const filtroDaFuncao = data.filter(champion => champion.tags.includes(requirement));
+  if (requirement==="") {
+    return data;
+  }
+  else
   return filtroDaFuncao;
 };
 
