@@ -49,9 +49,7 @@ de qual função gostaria de ter exibido os campeões.
 
 **História 2:**
 
-"Comecei a jogar LoL recentemente,e aida conheço pouco sobre os campeões. Gostaria
-de informaçoes como nivel de dificuldade, magia, ataque e defesa, para conhecer mais 
-sobre os peronagens."
+<img src='historia-2.jpeg'></img>
 
 Definição de pronto: O site deve exibir nos cards informações sobre magia, ataque e defesa
 dos personagens, além de um filtro que permita buscar pelo nível de dificuldade dos caméões.
