@@ -79,10 +79,6 @@ selectTag.addEventListener('change', function() {
 const selectAZ = document.querySelector('#sort');
 selectAZ.addEventListener('change', function() {
     const sortSelecionado = selectAZ.value;
-    const ordem = sortData(arrayCampeoes);
-    if (sortSelecionado === 'az') {
-        printCards(ordem.reverse())
-    } else {
-        printCards(ordem)
-    }
+    const ordem = sortData(arrayCampeoes,sortSelecionado);
+    printCards(ordem)
 })

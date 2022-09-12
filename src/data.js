@@ -7,13 +7,28 @@ export const filterData = (data, requirement) => {
   return filtroDaFuncao;
 };
 
-export const sortData = (data) => data.sort((champ1, champ2) => {
+const sortDataDesc = (data) => data.sort((champ1, champ2) => {
   if (champ1.name > champ2.name) {
     return -1;
   } else if (champ1.name < champ2.name) {
     return 1;
   }
 })
+const sortDataAsc = (data) => data.sort((champ1, champ2) => {
+  if (champ1.name < champ2.name) {
+    return -1;
+  } else if (champ1.name > champ2.name) {
+    return 1;
+  }
+})
+export const sortData = (data, order) => {
+  if (order === "az") {
+    return sortDataAsc (data)
+  }
+  else {
+    return sortDataDesc (data)
+  }
+}
 
 export const difficultyFilter = (data,difficulty) => {
   if (difficulty===""){

@@ -86,7 +86,38 @@ describe('sortData', () => {
         name: "Blitzcrank"
       }
     ];
-    expect(sortData(dados)).toStrictEqual(resultado)
+    expect(sortData(dados, "za")).toStrictEqual(resultado)
+  });
+  it('Deveria retornar os campeões em ordem crescente', () => {
+    const dados = [
+      {
+        name: "Nami",
+        
+      },
+      {
+        name: "Blitzcrank",
+       
+      },
+      {
+        name: "Taric",
+        
+      }
+    ];
+    
+    const resultado = [
+      {
+        
+        name: "Blitzcrank"
+      },
+      {
+        name: "Nami",
+        
+      },
+      {
+        name: "Taric"
+      }
+    ];
+    expect(sortData(dados, "az")).toStrictEqual(resultado)
   });
 });
 describe('difficultyFilter', () => {
