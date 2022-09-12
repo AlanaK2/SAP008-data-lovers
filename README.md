@@ -42,9 +42,7 @@ ter acesso a informações relevantes sobre os personagens do jogo.
 
 **História 1:**
 
-<img src='historia-1.png'></img>
-"Jogo LoL a anos, e gostaria de ter acesso de forma rápida ao tipo de função que cada 
-campeão desempenha, para escolher o campeão ideal para usar nas rotas do jogo"
+<img src='historia-1.jpeg'></img>
 
 Definição de pronto: O site deve possuir um filtro de busca onde a pessoa possa escolher
 de qual função gostaria de ter exibido os campeões. 
