@@ -53,7 +53,7 @@ function printCards(lol) {
             </div>
         </div>
         `).join('')
-}
+}  
 
 window.addEventListener('load', () => printCards(arrayCampeoes));
 
